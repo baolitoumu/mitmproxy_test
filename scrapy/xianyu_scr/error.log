@@ -1,0 +1,13 @@
+2018-05-07 06:53:29 [scrapy.core.scraper] ERROR: Error downloading <GET https://s.2.taobao.com/list/list.htm?_input_charset=utf8&q=sony&divisionId=340300>
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.5/dist-packages/twisted/internet/defer.py", line 1384, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/usr/local/lib/python3.5/dist-packages/twisted/python/failure.py", line 408, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/downloader/middleware.py", line 43, in process_request
+    defer.returnValue((yield download_func(request=request,spider=spider)))
+  File "/usr/local/lib/python3.5/dist-packages/twisted/internet/defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/usr/local/lib/python3.5/dist-packages/scrapy/core/downloader/handlers/http11.py", line 351, in _cb_timeout
+    raise TimeoutError("Getting %s took longer than %s seconds." % (url, timeout))
+twisted.internet.error.TimeoutError: User timeout caused connection failure: Getting https://s.2.taobao.com/list/list.htm?_input_charset=utf8&q=sony&divisionId=340300 took longer than 180.0 seconds..
